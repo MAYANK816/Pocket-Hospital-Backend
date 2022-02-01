@@ -20,6 +20,7 @@ mongoose.connect(connectionurl,{
 app.get('/',(req,res)=>res.status(200).send("Hello Programmers"));
 
 app.post('/userCreate',function(req,res){
+
     if(req.body.password != req.body.cpassword){
         console.log("passsword not matched");
         return res.redirect('back');
@@ -27,7 +28,7 @@ app.post('/userCreate',function(req,res){
 
     User.findOne({email : req.body.email},function(err,user){
         if(err){
-            console.log("error found");
+            res.status(403).send(err);
             return;
         }
         if(!user){
