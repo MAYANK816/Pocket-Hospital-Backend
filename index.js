@@ -6,6 +6,7 @@ import oxygenUsers from './models/oxygenCylinder.js'
 import needDoctor from './models/needDoctor.js'
 import hospitalbeds from './models/hospitalBeds.js'
 import needAmbulance from './models/needAmbulance.js'
+import needDietitian from './models/needDietitian.js'
 //App Config
 const app=express();
 const port=process.env.PORT||8001;
@@ -73,7 +74,6 @@ app.post('/oxygenCylinderData',function(req,res){
                     })
                 });
          app.post('/needdoctor',function(req,res){
- 
                             needDoctor.create(req.body,function(err,user){
                                 if(err){
                                     console.log("error found",err);
@@ -92,6 +92,18 @@ app.post('/oxygenCylinderData',function(req,res){
                                         return res.redirect('/');
                                     })
                                 });
+                                app.post('/needDietitian',function(req,res){
+
+                                    needDietitian.create(req.body,function(err,user){
+                                                if(err){
+                                                    console.log("error found",err);
+                                                    return;
+                                                }
+                                                return res.redirect('/');
+                                            })
+                                        });
+                                
+
 app.get('/SignIn',(req,res)=>{
     User.find((err,data)=>{
         if(err){
