@@ -5,6 +5,7 @@ import User from './models/user.js'
 import oxygenUsers from './models/oxygenCylinder.js'
 import needDoctor from './models/needDoctor.js'
 import hospitalbeds from './models/hospitalBeds.js'
+import needAmbulance from './models/needAmbulance.js'
 //App Config
 const app=express();
 const port=process.env.PORT||8001;
@@ -35,7 +36,7 @@ app.post('/userCreate',function(req,res){
         }
         if(!user){
             User.create(req.body,function(err,user){
-                console.log(req.body);
+        
                 if(err){
                     console.log("error found",err);
                     return;
@@ -52,7 +53,7 @@ app.post('/userCreate',function(req,res){
 })
 
 app.post('/oxygenCylinderData',function(req,res){
-    console.log(req.body);
+
             oxygenUsers.create(req.body,function(err,user){
                 if(err){
                     console.log("error found",err);
@@ -62,7 +63,7 @@ app.post('/oxygenCylinderData',function(req,res){
             })
         });
         app.post('/hospitalbeds',function(req,res){
-            console.log(req.body);
+
                     hospitalbeds.create(req.body,function(err,user){
                         if(err){
                             console.log("error found",err);
@@ -71,8 +72,8 @@ app.post('/oxygenCylinderData',function(req,res){
                         return res.redirect('/');
                     })
                 });
-                app.post('/needdoctor',function(req,res){
-                    console.log(req.body);
+         app.post('/needdoctor',function(req,res){
+ 
                             needDoctor.create(req.body,function(err,user){
                                 if(err){
                                     console.log("error found",err);
@@ -81,6 +82,16 @@ app.post('/oxygenCylinderData',function(req,res){
                                 return res.redirect('/');
                             })
                         });
+                        app.post('/needAmbulance',function(req,res){
+                      
+                            needAmbulance.create(req.body,function(err,user){
+                                        if(err){
+                                            console.log("error found",err);
+                                            return;
+                                        }
+                                        return res.redirect('/');
+                                    })
+                                });
 app.get('/SignIn',(req,res)=>{
     User.find((err,data)=>{
         if(err){
