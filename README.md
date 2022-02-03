@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Its basically a ##Backend of a webapp for people to help any kind of patient in their home / society with its 7 features like find oxygen cylinder, need doctor, find medicine, find hospital bed, need ambulance , need dietitian and donation for the patient which are unable to pay their medical charges .
+> Its basically a Backend of a webapp for people to help any kind of patient in their home / society with its 7 features like find oxygen cylinder, need doctor, find medicine, find hospital bed, need ambulance , need dietitian and donation for the patient which are unable to pay their medical charges .
 
 ### 🏠 [Homepage](https://pocket-hospital-2vqsqlk1k-mayank816.vercel.app/)
 
